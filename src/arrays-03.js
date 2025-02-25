@@ -19,8 +19,7 @@
  * @returns {number} The sum.
  */
 function addUpArrayElements(arr) {
-  // TODO: implement code
-  // HINT: Use a loop (for or forEach) to sum the elements.
+  return arr.reduce((sum, num) => sum + num, 0);
 }
 
 /**
@@ -29,10 +28,8 @@ function addUpArrayElements(arr) {
  * @returns {Array<number>} A new array with squared values.
  */
 function makeSquareNumbers(arr) {
-  // TODO: implement code
-  // HINT: Use the map() method.
+  return arr.map(num => num * num);
 }
-
 /**
  * Filters an array of words, returning only those longer than a given length.
  * @param {Array<string>} arr - An array of words.
@@ -40,17 +37,17 @@ function makeSquareNumbers(arr) {
  * @returns {Array<string>} The filtered array.
  */
 function filterForLargeWords(arr, length) {
-  // TODO: implement code
+  return arr.filter(word => word.length > length);
 }
-
 /**
  * Returns the first even number found in an array.
  * @param {Array<number>} arr - An array of numbers.
  * @returns {number|undefined} The first even number or undefined.
  */
 function findTheFirstEvenNumber(arr) {
-  // TODO: implement code
+  return arr.find(num => num % 2 === 0);
 }
+
 
 /**
  * Sorts an array of words in ascending, case-sensitive order.
@@ -58,10 +55,8 @@ function findTheFirstEvenNumber(arr) {
  * @returns {Array<string>} The sorted array.
  */
 function sortCaseSensitive(arr) {
-  // TODO: implement code
-  // HINT: Create a shallow copy and then use sort().
+  return [...arr].sort();
 }
-
 /**
  * Joins an array of words into a string using a specified separator.
  * @param {Array} arr - The array of words.
@@ -69,16 +64,15 @@ function sortCaseSensitive(arr) {
  * @returns {string} The resulting string.
  */
 function makeTheString(arr, separator) {
-  // TODO: implement code
+  return arr.join(separator);
 }
-
 /**
  * Returns a new array with the elements reversed.
  * @param {Array} arr - The original array.
  * @returns {Array} The reversed array.
  */
 function reverseTheArray(arr) {
-  // TODO: implement code
+  return [...arr].reverse();
 }
 
 /**
@@ -88,10 +82,8 @@ function reverseTheArray(arr) {
  * @returns {Array} The mirror array.
  */
 function makeMirrorArray(arr) {
-  // TODO: implement code
-  // HINT: Use slice (exclude the last element), reverse it, then concat.
+  return arr.concat([...arr].slice(0, -1).reverse());
 }
-
 /**
  * Creates a new array by dropping the last n elements.
  * @param {Array} arr - The original array.
@@ -99,8 +91,7 @@ function makeMirrorArray(arr) {
  * @returns {Array} The resulting array.
  */
 function dropRight(arr, n) {
-  // TODO: implement code
-  // HINT: Use slice() to return elements up to arr.length - n.
+  return arr.slice(0, -n);
 }
 
 /**
@@ -110,10 +101,8 @@ function dropRight(arr, n) {
  * @returns {Array} The resulting array.
  */
 function dropLeft(arr, n) {
-  // TODO: implement code
-  // HINT: Use slice() starting at index n.
+  return arr.slice(n);
 }
-
 /**
  * Checks whether an array contains a specific value.
  * @param {Array} arr - The array.
@@ -121,9 +110,8 @@ function dropLeft(arr, n) {
  * @returns {boolean} True if found, false otherwise.
  */
 function checkArrayForValue(arr, val) {
-  // TODO: implement code
+  return arr.includes(val);
 }
-
 module.exports = {
   addUpArrayElements,
   makeSquareNumbers,

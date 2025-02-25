@@ -20,8 +20,7 @@
  * @returns {string} The character at that index.
  */
 function findTheCharacterAtIndex(str, indx) {
-  // TODO: implement code
-  // HINT: Use the charAt() method.
+  return str.charAt(indx);
 }
 
 /**
@@ -32,9 +31,8 @@ function findTheCharacterAtIndex(str, indx) {
  * @returns {string} The sliced string.
  */
 function sliceTheString(str, start, end) {
-  // TODO: implement code
+  return str.slice(start, end);
 }
-
 /**
  * Splits a string into an array of substrings based on the given separator.
  * @param {string} str - The string.
@@ -42,16 +40,15 @@ function sliceTheString(str, start, end) {
  * @returns {Array} An array of substrings.
  */
 function splitTheString(str, separator) {
-  // TODO: implement code
+  return str.split(separator);
 }
-
 /**
  * Converts the entire string to uppercase.
  * @param {string} str - The string.
  * @returns {string} The uppercase string.
  */
 function makeAllUpperCase(str) {
-  // TODO: implement code
+  return str.toUpperCase();
 }
 
 /**
@@ -60,7 +57,7 @@ function makeAllUpperCase(str) {
  * @returns {string} The lowercase string.
  */
 function makeAllLowerCase(str) {
-  // TODO: implement code
+  return str.toLowerCase();
 }
 
 /**
@@ -69,8 +66,7 @@ function makeAllLowerCase(str) {
  * @returns {string} The word in title case.
  */
 function makeWordTitleCase(word) {
-  // TODO: implement code
-  // HINT: Capitalize the first letter and lowercase the rest.
+  return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
 }
 
 /**
@@ -81,8 +77,7 @@ function makeWordTitleCase(word) {
  * @returns {string} The modified string.
  */
 function replaceTheString(str, oldStr, newStr) {
-  // TODO: implement code
-  // HINT: Try using the split() method, then join.
+  return str.split(oldStr).join(newStr);
 }
 
 /**
@@ -91,8 +86,10 @@ function replaceTheString(str, oldStr, newStr) {
  * @returns {string} The title-cased sentence.
  */
 function makeSentenceTitleCase(sentence) {
-  // TODO: implement code
-  // HINT: Split the sentence into words, transform each word, then join them back.
+  return sentence
+    .split(" ")
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(" ");
 }
 
 module.exports = {

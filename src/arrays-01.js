@@ -19,7 +19,8 @@
  * @returns {*} The first element.
  */
 function getFirstValue(arr) {
-  // TODO: implement code
+  return arr[0];
+
 }
 
 /**
@@ -31,7 +32,7 @@ function getFirstValue(arr) {
  * @returns {Array} An array with the four elements.
  */
 function makeArray(a, b, c, d) {
-  // TODO: implement code
+  return [a, b, c, d];
 }
 
 /**
@@ -39,7 +40,7 @@ function makeArray(a, b, c, d) {
  * @returns {Array<number>} [2, 3, 5, 7, 11]
  */
 function createFirstFivePrimes() {
-  // TODO: implement code
+  return [2, 3, 5, 7, 11];
 }
 
 /**
@@ -48,10 +49,8 @@ function createFirstFivePrimes() {
  * @returns {Array<number>} The new array.
  */
 function createSizedArray(size) {
-  // TODO: implement code
-  // HINT: Use a for loop and push numbers from 0 to size - 1 into an array.
+  return Array.from({ length: size }, (_, i) => i);
 }
-
 /**
  * Modifies an array by adding the number 1 at both the beginning and the end.
  * Works on a shallow copy.
@@ -60,10 +59,11 @@ function createSizedArray(size) {
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
  */
 function modifyArrayByAdding(arr) {
-  // TODO: implement code
-  // HINT: Create a shallow copy and then use unshift() and push().
+  let newArr = [...arr];
+  newArr.unshift(1);
+  newArr.push(1);
+  return newArr;
 }
-
 /**
  * Modifies an array by removing the first and last elements.
  * Works on a shallow copy.
@@ -71,8 +71,7 @@ function modifyArrayByAdding(arr) {
  * @returns {Array} The modified array.
  */
 function modifyArrayByDeleting(arr) {
-  // TODO: implement code
-  // HINT: Create a shallow copy and use shift() and pop() if the array is not empty.
+  return arr.slice(1, -1);
 }
 
 /**
@@ -82,9 +81,8 @@ function modifyArrayByDeleting(arr) {
  * @returns {*} The element at the given index.
  */
 function findElementAtIndex(arr, index) {
-  // TODO: implement code
+  return arr[index];
 }
-
 /**
  * Finds the index of the first occurrence of a given value.
  * Returns -1 if not found.
@@ -93,8 +91,9 @@ function findElementAtIndex(arr, index) {
  * @returns {number} The index or -1 if not found.
  */
 function findElementByValue(arr, value) {
-  // TODO: implement code
+  return arr.indexOf(value);
 }
+
 
 /**
  * Replaces the element at a specific index with a new value.
@@ -105,7 +104,8 @@ function findElementByValue(arr, value) {
  * @returns {Array} The modified array.
  */
 function changeElementAtIndex(arr, index, value) {
-  // TODO: implement code
+  arr[index] = value;
+  return arr;
 }
 
 /**
@@ -114,7 +114,7 @@ function changeElementAtIndex(arr, index, value) {
  * @returns {string} The joined string.
  */
 function makeStringFromArray(arr) {
-  // TODO: implement code
+  return arr.join('');
 }
 
 /**
@@ -123,7 +123,7 @@ function makeStringFromArray(arr) {
  * @returns {Array} A new array with the same elements.
  */
 function createShallowCopy(arr) {
-  // TODO: implement code
+  return [...arr];
 }
 
 module.exports = {

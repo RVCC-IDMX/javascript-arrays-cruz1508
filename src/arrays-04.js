@@ -20,18 +20,15 @@
  * @returns {number} The sum.
  */
 function getAbsoluteSum(nums) {
-  // TODO: implement code
-  // HINT: Use a loop and Math.abs() to add the absolute values.
+  return nums.reduce((sum, num) => sum + Math.abs(num), 0);
 }
-
 /**
  * Creates a new array excluding any string elements.
  * @param {Array} arr - The array containing various data types.
  * @returns {Array} A new array with only non-string elements.
  */
 function removeStrings(arr) {
-  // TODO: implement code
-  // HINT: Use filter() and check that typeof item is not 'string'.
+  return arr.filter(item => typeof item !== 'string');
 }
 
 /**
@@ -40,10 +37,8 @@ function removeStrings(arr) {
  * @returns {Array<number>} An array [min, max] or [] if empty.
  */
 function findMinMax(arr) {
-  // TODO: implement code
-  // HINT: If the array is not empty, use Math.min and Math.max with spread syntax.
+  return arr.length ? [Math.min(...arr), Math.max(...arr)] : [];
 }
-
 /**
  * Formats an array of 10 digits into a telephone number string.
  * Format: (123) 456-7890
@@ -51,8 +46,7 @@ function findMinMax(arr) {
  * @returns {string} The formatted telephone number.
  */
 function getTelNo(numbers) {
-  // TODO: implement code
-  // HINT: Make a shallow copy, then use array methods (like splice and join) to format.
+  return `(${numbers.slice(0, 3).join('')}) ${numbers.slice(3, 6).join('')}-${numbers.slice(6).join('')}`;
 }
 
 module.exports = {
